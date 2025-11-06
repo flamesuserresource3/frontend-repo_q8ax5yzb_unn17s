@@ -1,28 +1,47 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import AboutResults from './components/AboutResults';
+import CaseStudies from './components/CaseStudies';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#090c10] text-white">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#090c10]/70 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8">
+          <a href="#top" className="flex items-center gap-2">
+            <span className="h-3 w-3 rounded-sm bg-gradient-to-br from-[#ff3b3b] to-cyan-400" />
+            <span className="text-sm font-semibold tracking-wide text-white">Solar Blaze Media</span>
+          </a>
+          <nav className="hidden items-center gap-6 text-sm text-neutral-300 md:flex">
+            <a href="#services" className="hover:text-white">Services</a>
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#case-studies" className="hover:text-white">Results</a>
+            <a href="#contact" className="rounded-md bg-[#ff3b3b] px-4 py-2 font-semibold text-white shadow-red-500/20 hover:shadow-lg">Get a Free Quote</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main id="top">
+        <Hero />
+        <Services />
+        <AboutResults />
+        <CaseStudies />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-white/5 bg-[#090c10] py-10 text-neutral-400">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm sm:flex-row sm:px-8">
+          <p>© {new Date().getFullYear()} Solar Blaze Media. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <a href="#services" className="hover:text-white">Services</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </div>
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
